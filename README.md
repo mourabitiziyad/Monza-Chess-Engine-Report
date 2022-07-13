@@ -59,8 +59,48 @@ Capstone Report
 
 ## TABLE OF CONTENTS
 
+   * [TABLE OF CONTENTS](#table-of-contents)
+   * [ACKNOWLEDGEMENTS](#acknowledgements)
+   * [ABSTRACT](#abstract)
+   * [ABSTRACT (IN FRENCH)](#abstract-in-french)
+   * [LIST OF FIGURES](#list-of-figures)
+   * [LIST OF TABLES](#list-of-tables)
+   * [LIST OF ACRONYMS](#list-of-acronyms)
+   * [1   	INTRODUCTION](#1---introduction)
+   * [2	FEASIBILITY STUDY](#2feasibility-study)
+   * [3	LITERATURE REVIEW](#3literature-review)
+      * [3.1 	Board Representation](#31-board-representation)
+      * [3.2 	Move Generation](#32-move-generation)
+      * [3.3 	Forsyth–Edwards Notation](#33-forsythedwards-notation)
+      * [3.4 	Magic Numbers / Magic Bitboards](#34-magic-numbers--magic-bitboards)
+      * [3.5 	Perft Testing](#35-perft-testing)
+      * [3.6 	Search and Evaluation](#36-search-and-evaluation)
+      * [3.6.1 	Search](#361-search)
+      * [3.6.2 	Evaluation](#362-evaluation)
+      * [3.6.3 	Zobrist Hashing](#363-zobrist-hashing)
+      * [3.6.4 	Transposition Tables](#364-transposition-tables)
+      * [3.7	Chess Interface](#37chess-interface)
+   * [4	IMPLEMENTATION &amp; TESTING](#4implementation--testing)
+      * [4.1	Board Representation](#41board-representation)
+      * [4.2	Move Encoding](#42move-encoding)
+      * [4.3	Move Generation &amp; Magic Numbers](#43move-generation--magic-numbers)
+      * [4.4	Forsyth-Edwards Notation](#44forsyth-edwards-notation)
+      * [4.5	Perft Testing](#45perft-testing)
+      * [4.6	Search &amp; Evaluation](#46search--evaluation)
+      * [4.7	Chess Interface / UCI Protocol Implementation](#47chess-interface--uci-protocol-implementation)
+      * [4.8	Open Sourcing the Project](#48open-sourcing-the-project)
+   * [5   	STEEPLE ANALYSIS](#5---steeple-analysis)
+      * [5.1 	Societal Implications](#51-societal-implications)
+      * [5.2	Technological Implications](#52technological-implications)
+      * [5.3	Economic Implications](#53economic-implications)
+      * [5.4	Environmental Implications](#54environmental-implications)
+      * [5.5	Political Implications](#55political-implications)
+      * [5.6	Legal Implications](#56legal-implications)
+      * [5.7	Ethical Implications](#57ethical-implications)
+   * [6   	CONCLUSION](#6---conclusion)
+   * [7	REFERENCES](#7references)
 
-[TOC]
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
 
 
 
