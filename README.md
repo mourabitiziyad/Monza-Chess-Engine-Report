@@ -36,65 +36,12 @@ Check to make sure this is supposed to be a code block.
 ----->
 
 
-<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 23.</p>
-<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
-
-<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
-<a href="#gdcalert2">alert2</a>
-<a href="#gdcalert3">alert3</a>
-<a href="#gdcalert4">alert4</a>
-<a href="#gdcalert5">alert5</a>
-<a href="#gdcalert6">alert6</a>
-<a href="#gdcalert7">alert7</a>
-<a href="#gdcalert8">alert8</a>
-<a href="#gdcalert9">alert9</a>
-<a href="#gdcalert10">alert10</a>
-<a href="#gdcalert11">alert11</a>
-<a href="#gdcalert12">alert12</a>
-<a href="#gdcalert13">alert13</a>
-<a href="#gdcalert14">alert14</a>
-<a href="#gdcalert15">alert15</a>
-<a href="#gdcalert16">alert16</a>
-<a href="#gdcalert17">alert17</a>
-<a href="#gdcalert18">alert18</a>
-<a href="#gdcalert19">alert19</a>
-<a href="#gdcalert20">alert20</a>
-<a href="#gdcalert21">alert21</a>
-<a href="#gdcalert22">alert22</a>
-<a href="#gdcalert23">alert23</a>
-
-<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
-
-
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
+<img width="141" alt="image" src="https://user-images.githubusercontent.com/60394642/178786673-47eec0a9-842a-40d3-a430-6a2a845b4eeb.png">
 
 
 **SCHOOL OF SCIENCE AND ENGINEERING**
 
-** **
-
-** **
-
-** **
-
-** **
-
-** **
-
 **AN OPEN-SOURCE MAGIC BITBOARDS IMPLEMENTATION OF A CHESS ENGINE**
-
-** **
-
-** **
-
-** **
-
-** **
 
 SPRING 2022
 
@@ -104,52 +51,11 @@ Supervised by
 
 **Dr. Naeem Nisar Sheikh**
 
-** **
-
-**  **
-
 AN OPEN-SOURCE MAGIC BITBOARDS IMPLEMENTATION OF A CHESS ENGINE
-
- 
 
 Capstone Report
 
-**Student Statement:**                                                           	        	
-
-I, Ziyad Mourabiti, have applied ethics to the design process and in the selection of the final proposed design. I have held the safety of the public to be paramount and have addressed this in the presented design wherever may be applicable.
-
- 
-
- 
-
- 
-
-_____________________________________________________
-
-Ziyad Mourabiti
-
- 
-
- 
-
- 
-
- 
-
-Approved by the Supervisor 
-
- 
-
- 
-
- 
-
-_____________________________________________________
-
-Dr. N. Sheikh
-
- 
-
+** **
 
 ## TABLE OF CONTENTS
 
@@ -163,16 +69,9 @@ Dr. N. Sheikh
 
 ## ACKNOWLEDGEMENTS
 
- 
-
-I would like to dedicate this section to showing my utmost appreciation and gratitude to the following people who have and continue to support me throughout my AUI Journey, and particularly for this capstone project: My parents Hassan and Sabah for their unconditional love and support, Inasse, Jad and Iyad, my supervisor Dr. Naeem Nisar Sheikh, Ukrainian Chess Programmer Maksim Korzh, Aymane Yassine, Idir Moukhlis, Reda El Makroum, Aya Hanouni, Abdelghaffar Boukhlifi, Youssef Lahbiel, and everyone who played a positive role that led me to be where I am today.
-
-
-
+List of individuals and groups making any sorts of additions to the chess documentation, which would include the references.
 
 ## ABSTRACT
-
- 
 
 Chess engines, especially ones that can play at a very high level, are not as common as one would think. There are few notable mentions of very powerful engines that are widely used among different online chess services like Chess dot com and Lichess, to name a few. Although the actual use of engines is common among chess players, chess programming as an area continues to be scarce in terms of interest and availability of information, relative to how often they are referred to in usage.
 
@@ -200,89 +99,82 @@ La recherche et les tests personnels prouvent que, bien qu'il soit formidable de
 
 ## LIST OF FIGURES
 
-**Figure 1**: Starting position on a chessboard with coordinates				18
+**Figure 1**: Starting position on a chessboard with coordinates
 
-**Figure 2**: Bitboard representation of a starting position					20
+**Figure 2**: Bitboard representation of a starting position
 
-**Figure 3**: All bits allocated to one encoded move						21
+**Figure 3**: All bits allocated to one encoded move
 
-**Figure 4**: FEN representation of a starting chess position					22
+**Figure 4**: FEN representation of a starting chess position
 
-**Figure 5**: Extracting Relevant Piece Occupancy Bits given a rook on D4			24
+**Figure 5**: Extracting Relevant Piece Occupancy Bits given a rook on D4
 
-**Figure 6**: Chess position for a white rook on C3						25
+**Figure 6**: Chess position for a white rook on C3
 
-**Figure 7**: Possible rook moves in the position						27
+**Figure 7**: Possible rook moves in the position
 
-**Figure 8**: Tord Kallqvist Romstad’s trial and error approach for generating magics		28
+**Figure 8**: Tord Kallqvist Romstad’s trial and error approach for generating magics
 
-**Figure 9**: Sample Perft Function in C							29
+**Figure 9**: Sample Perft Function in C
 
-**Figure 10**: Minmax Search Algorithm							30
+**Figure 10**: Minmax Search Algorithm
 
-**Figure 11**: Maximizing Side of Minmax							31
+**Figure 11**: Maximizing Side of Minmax
 
-**Figure 12**: Minimizing Side of Minmax							31
+**Figure 12**: Minimizing Side of Minmax
 
-**Figure 13**: Negamax Search Pseudocode							32
+**Figure 13**: Negamax Search Pseudocode
 
-**Figure 14**: Negamax Search with Alpha-Beta Pruning					33
+**Figure 14**: Negamax Search with Alpha-Beta Pruning
 
-**Figure 15**: Search Tree with branch cutoffs							33
+**Figure 15**: Search Tree with branch cutoffs
 
-**Figure 16**: Principle Variation Search							35
+**Figure 16**: Principle Variation Search
 
-**Figure 17**: Board illustration of a Fianchetto							39
+**Figure 17**: Board illustration of a Fianchetto
 
-**Figure 18**: A transposition table entry in the form of a C++ struct				43
+**Figure 18**: A transposition table entry in the form of a C++ struct
 
-**Figure 19**: White Pawns Bitboard in a Starting Position					46
+**Figure 19**: White Pawns Bitboard in a Starting Position
 
-**Figure 20**: Bitboard Representation of White Pawns in a Starting Position			46
+**Figure 20**: Bitboard Representation of White Pawns in a Starting Position
 
-**Figure 21**: Extracting board information through piece and occupancy bitboards		47
+**Figure 21**: Extracting board information through piece and occupancy bitboards
 
-**Figure 22**: Chess Starting Position in Unicode						48
+**Figure 22**: Chess Starting Position in Unicode
 
-**Figure 23**: A summary of some important macros used throughout the implementation	48
+**Figure 23**: A summary of some important macros used throughout the implementation
 
-**Figure 24**: Move Encoder Macro Implementation						49
+**Figure 24**: Move Encoder Macro Implementation
 
-**Figure 25**: Finding magics for the Rook							51
+**Figure 25**: Finding magics for the Rook
 
-**Figure 26**: Detecting whether a square is attacked on the board				54
+**Figure 26**: Detecting whether a square is attacked on the board
 
-**Figure 27**: Perft - Position #1- 								56
+**Figure 27**: Perft - Position #1 - r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq -		
 
-r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq -		
+**Figure 28**: Perft - Position #2 - rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 
-**Figure 28**: Perft - Position #2 - 								57
+**Figure 29**: Perft - Position #3 - r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1
 
-rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+**Figure 30**: Arena Chess Interface connected to Monza Chess Engine
 
-**Figure 29**: Perft - Position #3 - 								57
-
-r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1
-
-**Figure 30**: Arena Chess Interface connected to Monza Chess Engine			63
-
-**Figure 31**: Monza Chess Engine CLI								65
-
+**Figure 31**: Monza Chess Engine CLI
 
 ## 
 
 
 ## LIST OF TABLES
 
-**Table 1**: Extracting the Magic Index								23
+**Table 1**: Extracting the Magic Index
 
-**Table 2**: Retrieve possible moves through the acquired magic index			24
+**Table 2**: Retrieve possible moves through the acquired magic index
 
-**Table 3**: Material Score in Classical Chess							35
+**Table 3**: Material Score in Classical Chess
 
-**Table 4**: Sliding Pieces Relevant Occupancy Bits						50
+**Table 4**: Sliding Pieces Relevant Occupancy Bits
 
-**Table 5**: Performance gains from different points of the Chess Engine Implementation	59
+**Table 5**: Performance gains from different points of the Chess Engine Implementation
 
 
 
@@ -328,14 +220,12 @@ r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1
 
 ## 1   	INTRODUCTION
 
- 
 
 A chess engine is a computer program that can be used on various levels of chess. It essentially acts as a tool for players to evaluate their chess games and improve their decision-making through position evaluations after concluding their games. Chess engines are also used by analysts and spectators during live chess events in big tournaments, notably during the Chess World Championship, Chess Candidates Tournament, and others. Chess positions during play can be obscure to beginners and intermediate followers. This makes the engine a reliable way of better understanding who has an advantageous position or an absolute advantage during the play.
 
 Chess engines fall within the framework of game development and theory, involving complex search and evaluation strategies. Chess Programming also relies on other aspects that improve search efficiency and speed. Additionally, it is important to understand that the topic of Chess Engine Programming is not common among programmers or computer science students. Engine projects fall within the framework of applications of search algorithms that one may encounter in a class of Artificial Intelligence. A lot of these engines, although provide a proof of concept for how a certain search algorithm functions are given a board of 64 squares, it does not keep in mind other factors of what an efficient representation should look like, or what kind of effects a certain search technique could lead, simply because these two areas will not necessarily fall in the scope of the project.
 
 The aim is to develop a fully functional chess engine that should, in theory, play a high level of chess. As we will explore later, this theory is based on the idea that many of the applications and methods followed to build this engine are, fundamentally speaking, de facto standards for state-of-the-art engines like Stockfish[1], Leela[2], or Berserk[3]. An additional, and future aim to achieve once all implementation details are fully ready, is to make the project open-source and available to the public, either through a web version or by accessing the source code directly. Ideally, this capstone should represent a progressive process that involves taking some of the core ideas that go about chess engine implementations, digesting them, and applying them to the capstone project. Part of digesting these ideas involves thorough reading on these concepts and looking at developer feeds. Sections involving the implementation details of the project are as follows:
-
 
 
 1. Board Representation
@@ -377,8 +267,9 @@ One of the most common board representations involves the use of arrays. Array-b
 <p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image2.png "image_tooltip")
 
+
+<img width="151" alt="image" src="https://user-images.githubusercontent.com/60394642/178787865-0055fe23-a3b9-4f5b-b2a3-fa304d175d89.png">
 
 **Figure 1: Starting position on a chessboard with coordinates**
 
