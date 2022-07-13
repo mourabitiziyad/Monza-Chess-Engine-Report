@@ -262,32 +262,21 @@ Many resources regarding chess and chess engines, especially more recent ones, d
 
 One of the most common board representations involves the use of arrays. Array-based representation can be through the use of 2-dimensional arrays that hold 8x8 elements or a one-dimensional array with 64 elements.
 
-​​
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 
 
 <img width="151" alt="image" src="https://user-images.githubusercontent.com/60394642/178787865-0055fe23-a3b9-4f5b-b2a3-fa304d175d89.png">
 
 **Figure 1: Starting position on a chessboard with coordinates**
 
-The way this 2-dimensional array can be in such a way that if we were to put a piece in a1, we would map it to array_board[0][0], a piece in h1 would be array_board[0][7], b3 to array_board[2][1], and so on[4].
+The way this 2-dimensional array can be in such a way that if we were to put a piece in a1, we would map it to `array_board[0][0]`, a piece in h1 would be `array_board[0][7]`, b3 to `array_board[2][1]`, and so on[4].
 
 Although this method looks easy to manage, it can be extremely inefficient when moving to the process of move generation, affecting this particular area would essentially impact the performance and strength of the entire engine. Inefficient generation means a longer time to generate moves and search for the move, making the engine very likely to lose a chess game on time or be unreliably slow. The methods of indexing and accessing array elements, as well as checking for boundaries, lead to more operations that prove to be expensive when accumulated. There are ways to mitigate the constant check for board bounds, some of them are addressed in variants of the array-based representation and **0x88 board representation**[5]. This approach is simply not as fast as other board representations from a hardware or CPU standpoint.
 
 Another common approach to board representation is through the use of **Bitboards**. a bitboard is seen as a 64-bit word. Many resources mention the use of a double 32-bit representation, but at this point, it is safe to assume that a 64-bit processor architecture is what most computers operate on today. This word, which can be represented in C/C++ as an unsigned long long, represents the entire board position, with 1s and 0s signifying whether a square is occupied or not, respectively. Bitboards are highly efficient as they take advantage of CPU-efficient bitwise operations like AND, OR, XOR, as well as bit shifting. The use of bitboards can be combined with the idea of array-based representation such that an array of 12 elements can each hold a bitboard signifying a piece type. So, in order to retrieve all pieces of both colors into one bitboard, we can simply perform the OR operation on these 12 elements. Moving a piece is a matter of shifting, and so on. Overall, in its core concept, Bitboards are a much better alternative to a plain array-based representation due to aspects of speed and memory compactness. But they are **much more complex** to implement and maintain[6]. 
-
 **Figure 2** provides a bitboard representation of the starting position shown in **Figure 1**.
 
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
+<img width="181" alt="image" src="https://user-images.githubusercontent.com/60394642/178797520-40f47d06-6136-48e8-816c-c13e34296ac3.png">
 
 **Figure 2: Bitboard representation of a starting position**
 
@@ -304,10 +293,7 @@ One way to encode these moves in a unified way so that they can be understood by
 
 
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+![image](https://user-images.githubusercontent.com/60394642/178797652-83896476-381e-42dd-87d9-3eecc022e3ab.jpeg)
 
 
 **Figure 3: All bits allocated to one encoded move**
@@ -346,10 +332,7 @@ For instance, given a rook on B8, we would notice that only the 8th file and B r
 
 
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
+<img width="336" alt="image" src="https://user-images.githubusercontent.com/60394642/178799337-0cee1285-bca0-4f90-853a-e414b5aed983.png">
 
 
 **Figure 5: Extracting Relevant Piece Occupancy Bits given a rook on D4**
@@ -360,10 +343,7 @@ An interesting source[13] provides an overview of how the magic numbers are calc
 
 
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
+<img width="230" alt="image" src="https://user-images.githubusercontent.com/60394642/178799656-6e9129e8-7623-4b1e-8338-99fba09f9e9b.png">
 
 
 **Figure 6: Chess position for a white rook on C3**
@@ -373,11 +353,8 @@ Table 1[13] depicts and describes the operations done to generate a magic index.
 **Table 1: Extracting the Magic Index**
 
 
+![image](https://user-images.githubusercontent.com/60394642/178799817-d47bf185-ac1c-4afe-aae2-bcee1faa1fa5.jpeg)
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
 
 
 “All Pieces” refers to the bitboard representation of figure 6. that bitboard is bitwise ANDed with the rook mask for said square, which refers to all the squares where the rook can move, assuming an empty board. Note that we do not include the edges for two reasons: the edges are assumed to be blockers and will be included when we later define whether they are friendly or not, an unfriendly blocker is the same as an empty square, meaning the piece can move or perform a capture on that square. The second reason is that this simplification saves us some bits, which is helpful in the calculation.
@@ -389,19 +366,7 @@ Table 2 shows our use of the index to retrieve the possible moves of the rook on
 **Table 2: Retrieve possible moves through the acquired magic index**
 
 
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
-
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
+![image](https://user-images.githubusercontent.com/60394642/178799871-e3a56111-82dd-4dda-9786-c7d9b58c1811.jpeg)
 
 
 **Figure 7: Possible rook moves in the position**
@@ -449,11 +414,9 @@ As per the previous two points in this review, we can see that it is essential, 
 
 
 
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
+![image](https://user-images.githubusercontent.com/60394642/178802018-8555ea16-4828-481d-9160-3fa83b3c71d5.jpeg)
 
 ![alt_text](images/image10.png "image_tooltip")
-
 
 **Figure 9: Sample Perft Function in C**
 
@@ -490,9 +453,7 @@ Figures 11 and 12 show sample implementations of the maximizing and minimizing f
 
 
 
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
+![image](https://user-images.githubusercontent.com/60394642/178802116-17d87c28-cff2-4320-a202-35e0f507ebe2.jpeg)
 ![alt_text](images/image11.png "image_tooltip")
 
 
@@ -500,10 +461,7 @@ Figures 11 and 12 show sample implementations of the maximizing and minimizing f
 
 
 
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
+![image](https://user-images.githubusercontent.com/60394642/178802142-2cbfeb02-b1fa-4ad7-8dfc-9c64669969b1.jpeg)
 
 
 **Figure 12: Minimizing Side of Minmax**
@@ -514,9 +472,7 @@ Interestingly, there is a more concise representation of minmax search, through 
 
 
 
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
+![image](https://user-images.githubusercontent.com/60394642/178802160-16c3e42d-2a2a-42ca-9fbd-229499319c33.jpeg)
 ![alt_text](images/image13.png "image_tooltip")
 
 
@@ -528,20 +484,13 @@ As mentioned earlier, the high branching factor that comes with chess makes the 
 
 
 
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
+![image](https://user-images.githubusercontent.com/60394642/178802186-626ea129-06b0-4f4b-bacb-3d5f64baae6a.jpeg)
 
 
 **Figure 14: Negamax Search with Alpha-Beta Pruning**
 
 
 
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
 
 
 **Figure 15: Search Tree with branch cutoffs**
@@ -679,10 +628,7 @@ These positional scores do not assume piece occupancies over the board but rathe
 
 
 
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
+![image](https://user-images.githubusercontent.com/60394642/178802279-9cacba88-fb4b-4c78-a1bf-99f711577ef5.jpeg)
 
 
 **Figure 17: Board illustration of a Fianchetto**
@@ -788,7 +734,7 @@ Once formatted, figure 19 is visualized in figure 20 as follows:
 2      1  1  1  1  1  1  1  1
 1      0  0  0  0  0  0  0  0
 
-          A  B  C  D  E   F   G  H
+       A  B  C  D  E  F  G  H
 ```
 
 
@@ -823,10 +769,8 @@ Step 3 is executed through a routine that performs an AND operation between a bi
 
 
 
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+<img width="165" alt="image" src="https://user-images.githubusercontent.com/60394642/178803034-dbb08ca8-8fea-4573-8287-2b77f4689f5e.png">
 
-
-![alt_text](images/image17.png "image_tooltip")
 
 
 **Figure 22: Chess Starting Position in Unicode**
@@ -1015,10 +959,8 @@ Now that both the move generator and FEN parser are ready, Perft can be conducte
 
 
 
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+![image](https://user-images.githubusercontent.com/60394642/178803106-1612b065-f105-4877-9530-45386f2fca6c.jpeg)
 
-
-![alt_text](images/image18.png "image_tooltip")
 
 
 **Figure 27: Perft - Position #1- **
@@ -1028,10 +970,8 @@ Now that both the move generator and FEN parser are ready, Perft can be conducte
 
 ### 
 
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+![image](https://user-images.githubusercontent.com/60394642/178803159-4793edc8-286f-4a3f-b2d3-3bf20de0c614.jpeg)
 
-
-![alt_text](images/image19.png "image_tooltip")
 
 
 **Figure 28: Perft - Position #2 -** 
@@ -1040,10 +980,7 @@ Now that both the move generator and FEN parser are ready, Perft can be conducte
 
 
 
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
+![image](https://user-images.githubusercontent.com/60394642/178803210-b62b0d73-0913-4b33-9c4b-37ff020f86cd.jpeg)
 
 
 **Figure 29: Perft - Position #3 - **
@@ -1181,10 +1118,9 @@ Thanks to the implementation of the UCI Protocol, a user can not only interact w
 
 
 
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+<img width="460" alt="image" src="https://user-images.githubusercontent.com/60394642/178803274-39ceed68-e79c-4021-8116-5a6506a6f7a4.png">
 
 
-![alt_text](images/image21.png "image_tooltip")
 
 
 **Figure 30: Arena Chess Interface connected to Monza Chess Engine**
@@ -1199,11 +1135,7 @@ Note that Appendices H, I, and J contain PGN sequences of games played which eit
 The process of open sourcing the project is not in its final form. There is a long upcoming process of understanding engine weaknesses, improving code readability, cleaning unused aspects, and improving its overall presentation. The main aspects that make a project openly available are set through its availability (although yet to turn public as per the date of this report) on GitHub and overall version control mechanics that can easily convert this project, this report included, into a public contribution to the chess programming community.
 
 
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image22.png "image_tooltip")
+<img width="453" alt="image" src="https://user-images.githubusercontent.com/60394642/178803308-6f699423-b19a-4557-b2c9-c81de7b629ad.png">
 
 
 **Figure 31: Monza Chess Engine CLI**
